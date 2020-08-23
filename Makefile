@@ -12,9 +12,6 @@ build:
 
 test:
 	docker run --rm $(DOCKER_IMAGE_NAME) /bin/echo "Success."
-	
+
 push:
 	docker push $(DOCKER_IMAGE_NAME)
-
-
-
