@@ -19,24 +19,29 @@ make version
 make push
 ```
 
-### How to use this image
+### Host config
+```bash
+# Create emtpy files
+mkdir ~/docker-data && cd "$_"
+mkdir ~/docker-data/domoticz && cd "$_"
+touch ~/docker-data/domoticz/domoticz.db
+touch ~/docker-data/domoticz/domoticz.log
+
+# Create a self-signed PEM file
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+cat ~/docker-data/domoticz/key.pem > ~/docker-data/domoticz/domoticz.pem
+cat ~/docker-data/domoticz/cert.pem >> ~/docker-data/domoticz/domoticz.pem
+rm ~/docker-data/domoticz/key.pem && rm ~/docker-data/domoticz/cert.pem
 ```
-sudo docker run --privileged \
-        -d \
-        --network=host \
-        --device=/dev/ttyAMA0 \
-        --device=/dev/ttyUSB0 \
-        --device=/dev/vchiq \
-        -e LD_LIBRARY_PATH=/opt/vc/lib  \
-        -v /opt/vc:/opt/vc:ro \
-        -v /etc/localtime:/etc/localtime \
-        -v $HOME/docker-data/domoticz/domoticz-rfxcom.db:/root/domoticz/domoticz.db:rw \
-        -v $HOME/docker-data/domoticz/server_cert.pem:/root/domoticz/server_cert.pem:rw \
-        -v $HOME/docker-data/domoticz/log.txt:/tmp/domoticz.txt:rw \
-        --name domoticz \
-        --restart=always \
-        tloxipeuhca/rpi-domoticz-docker
+
+### How to use this image
+```bash
+# start standard instance
+sh run.sh
+# start gpio instance (docker privileged)
+sh run-with-gpio.sh
 ```
 
 ### Links
 + [domoticz](http://www.domoticz.com)
+
