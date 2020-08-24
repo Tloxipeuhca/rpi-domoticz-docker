@@ -1,4 +1,4 @@
-FROM balenalib/raspberry-pi-debian:latest
+FROM balenalib/raspberry-pi-debian:buster
 
 MAINTAINER Tloxipeuhca <tloxipeuhca@gmail.com>
 
