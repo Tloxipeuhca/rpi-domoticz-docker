@@ -34,6 +34,11 @@ sh  ~/docker-data/domoticz/run.sh
 sh  ~/docker-data/domoticz/run-with-gpio.sh
 ```
 
+### Browse to portal
+```
+url: rpi-ip_address:8094 
+```
+
 ### Links
 + [domoticz](http://www.domoticz.com)
 
