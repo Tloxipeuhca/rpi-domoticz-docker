@@ -30,13 +30,15 @@ rm ~/docker-data/domoticz/key.pem && rm ~/docker-data/domoticz/cert.pem
 ```bash
 # start standard instance
 sh  ~/docker-data/domoticz/run.sh
+
 # start gpio instance (docker privileged)
 sh  ~/docker-data/domoticz/run-with-gpio.sh
 ```
 
 ### Browse to portal
 ```
-url: rpi-ip_address:8094 
+url: http://rpi-ip_address:8094 
+url: https://rpi-ip_address:8095
 ```
 
 ### Links
