@@ -29,7 +29,7 @@ EXPOSE 8094 8095 6144
 COPY gpio.sh /root/domoticz/gpio.sh
 RUN chmod +x /root/domoticz/gpio.sh
 
-# Start command# Start command
+# Start command
 COPY start.sh /root/domoticz/start.sh
 RUN chmod +x /root/domoticz/start.sh
 CMD /root/domoticz/start.sh
