@@ -2,7 +2,8 @@ sudo docker run \
         -d \
         --network=host \
         --device=/dev/ttyAMA0 \
-        --device=/dev/vchiq \
+        --device=/dev/ttyUSB0 \
+	--device=/dev/vchiq \
         -e LD_LIBRARY_PATH=/opt/vc/lib  \
         -v /opt/vc:/opt/vc:ro \
         -v /etc/localtime:/etc/localtime \
