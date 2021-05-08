@@ -13,8 +13,13 @@ RUN apt-get install -y cmake apt-utils build-essential
 RUN apt-get install -y make gcc g++ 
 RUN apt-get install -y libssl-dev git 
 RUN apt-get install -y libcurl4-gnutls-dev libusb-dev 
-#RUN apt-get install -y python3-dev 
+RUN apt-get install -y software-properties-common
+RUN apt-get install -y python3-dev 
 RUN apt-get install -y zlib1g-dev
+WORKDIR /root/domoticz/plugins
+RUN git clone https://github.com/sasu-drooz/Domoticz-Zigate.git
+RUN chmod +x Domoticz-Zigate/plugin.py
+WORKDIR /root/domoticz
 
 #Clean up
 RUN rm domoticz_linux_armv7l.tgz
