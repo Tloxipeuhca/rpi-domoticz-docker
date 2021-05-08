@@ -1,6 +1,6 @@
 # rpi-domoticz-docker
 
-Docker image containing Domoticz who is compatible with Raspberry Pi.
+Raspberry Pi Docker image containing Domoticz, GPIO, Python3 and Zigate.
 
 ### Download and build the docker image
 ```bash
@@ -32,7 +32,13 @@ rm ~/docker-data/domoticz/key.pem && rm ~/docker-data/domoticz/cert.pem
 sh  ~/docker-data/domoticz/run.sh
 
 # start gpio instance (docker privileged)
-sh  ~/docker-data/domoticz/run-with-gpio.sh
+sh  ~/docker-data/domoticz/run.sh gpio
+
+# start gpio instance and usb (docker privileged)
+sh  ~/docker-data/domoticz/run.sh gpio usb
+
+# start gpio instance and usb and zigate(docker privileged)
+sh  ~/docker-data/domoticz/run.sh gpio usb zigate
 ```
 
 ### Browse to portal
