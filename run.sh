@@ -2,7 +2,7 @@
 
 [[ "$@" =~ 'usb' || "$@" =~ 'usb0' ]] && usb0="--device=/dev/ttyUSB0"
 [[ "$@" =~ 'usb1' ]] && usb1="--device=/dev/ttyUSB1"
-[[ "$@" =~ "zigate" || "$@" =~ "gpio" ]] && privileged="--privileged"
+[[ "$@" =~ "zigate" || "$@" =~ "gpio" || "$@" =~ "deconz" ]] && privileged="--privileged"
 
 run="sudo docker run \
         -d \
