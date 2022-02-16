@@ -6,17 +6,17 @@ Raspberry Pi Docker image containing Domoticz, GPIO, Python3, Zigate plugin and 
 ```bash
 sudo apt-get install -y git
 mkdir ~/downloads && cd "$_"
-git clone https://github.com/Tloxipeuhca/rpi-rclone-docker.git && cd $(basename $_ .git) && make build
+git clone https://github.com/Tloxipeuhca/rpi-domoticz-docker.git && cd $(basename $_ .git) && make build
 ```
 
 ### Host config
 ```bash
 # Create emtpy files
-mkdir ~/docker-data && cd "$_"
-mkdir ~/docker-data/domoticz && cd "$_"
+mkdir ~/docker-data
+mkdir ~/docker-data/domoticz
 touch ~/docker-data/domoticz/domoticz.db
 touch ~/docker-data/domoticz/domoticz.log
-cp gpio.sh run.sh run-with-gpio.sh ~/docker-data/domoticz/.
+cp gpio.sh run.sh ~/docker-data/domoticz/.
 
 # Create a self-signed PEM file
 cd ~/docker-data/domoticz
