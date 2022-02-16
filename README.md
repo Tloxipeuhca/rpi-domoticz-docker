@@ -6,7 +6,7 @@ Raspberry Pi Docker image containing Domoticz, GPIO, Python3, Zigate plugin and 
 ```bash
 sudo apt-get install -y git
 mkdir ~/downloads && cd "$_"
-git clone https://github.com/Tloxipeuhca/rpi-domoticz-docker.git && cd $(basename $_ .git) && make build
+git clone https://github.com/Tloxipeuhca/rpi-domoticz-docker.git && cd $(basename $_ .git) && make build --no-cache
 ```
 
 ### Host config
