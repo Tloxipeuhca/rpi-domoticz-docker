@@ -9,8 +9,7 @@ DOCKER_IMAGE_NAME=tloxipeuhca/rpi-domoticz-docker
 all: build
 
 build:
-	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION)$(DOCKER_IMAGE_ARCHI) --build-arg GF_VERSION=$(DOCKER_IMAGE_VERSION) -f Dockerfile$(DOCKER_IMAGE_ARCHI) .
-	docker build -t $(DOCKER_IMAGE_NAME):latest --build-arg GF_VERSION=$(DOCKER_IMAGE_VERSION) -f Dockerfile$(DOCKER_IMAGE_ARCHI) .
+	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_VERSION)$(DOCKER_IMAGE_ARCHI) -t $(DOCKER_IMAGE_NAME):latest --no-cache --build-arg GF_VERSION=$(DOCKER_IMAGE_VERSION) -f Dockerfile$(DOCKER_IMAGE_ARCHI) .
 
 test:
 	docker run --rm $(DOCKER_IMAGE_NAME) /bin/echo "Success."

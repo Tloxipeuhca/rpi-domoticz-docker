@@ -1,6 +1,6 @@
 # rpi-domoticz-docker
 
-Raspberry Pi Docker image containing Domoticz, GPIO, Python3, Zigate plugin and deCONZ plugin.
+Raspberry Pi Docker image containing Domoticz, GPIO, Python3, Tuya plugin, Zigate plugin and deCONZ plugin.
 
 ### Download and build the docker image
 ```bash
@@ -29,19 +29,19 @@ rm ~/docker-data/domoticz/key.pem && rm ~/docker-data/domoticz/cert.pem
 ### How to use this image
 ```bash
 # start standard instance
-sh  ~/docker-data/domoticz/run.sh
+bash  ~/docker-data/domoticz/run.sh
 
 # start gpio instance (docker privileged)
-sh  ~/docker-data/domoticz/run.sh gpio
+bash  ~/docker-data/domoticz/run.sh gpio
 
 # start gpio instance and usb (docker privileged)
-sh  ~/docker-data/domoticz/run.sh gpio usb
+bash  ~/docker-data/domoticz/run.sh gpio usb
 
 # start gpio instance and usb and zigate(docker privileged)
-sh  ~/docker-data/domoticz/run.sh gpio usb zigate
+bash  ~/docker-data/domoticz/run.sh gpio usb zigate
 
 # start gpio instance and usb and deCONZ(docker privileged)
-sh  ~/docker-data/domoticz/run.sh gpio usb deconz
+bash  ~/docker-data/domoticz/run.sh gpio usb deconz
 ```
 
 ### Browse to portal

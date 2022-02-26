@@ -16,7 +16,7 @@ RUN apt-get install -y libcurl4-gnutls-dev libusb-dev
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y python3-dev python3-pip
 RUN apt-get install -y zlib1g-dev
-RUN sudo -H pip3 install requests
+RUN sudo -H pip3 install tuyaha requests
 
 #Add plugins 
 WORKDIR /root/domoticz/plugins
@@ -24,6 +24,8 @@ RUN git clone https://github.com/sasu-drooz/Domoticz-Zigate.git
 RUN chmod +x Domoticz-Zigate/plugin.py
 RUN git clone https://github.com/Smanar/Domoticz-deCONZ.git
 RUN chmod +x Domoticz-deCONZ/plugin.py
+RUN git clone https://github.com/Xenomes/Domoticz-TUYA-Plugin.git
+RUN chmod +x Domoticz-TUYA-Plugin/plugin.py
 
 #Clean up
 WORKDIR /root/domoticz
